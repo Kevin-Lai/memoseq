@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="game.css" />
+
     <script src="./dist/main.js"></script>
 
     <title>Document</title>
 </head>
 <body>
-    <canvas id="game-canvas"></canvas>
-    <div id="root">
-        Test
-        <div id="seq">
-            Sequence
-        </div>
+    <div class="timer-holder">
+        <div id="timer"></div>
     </div>
+    <!-- <div id="root">
+        Test
+    </div> -->
+    <div id="game-seq">
+        Game Sequence: 
+    </div>
+    <div id="enter-seq">
+        User entered: 
+    </div>
+    <div id="draw-seq">
+
+    </div>
+    <canvas id="game-canvas" width="1000" height="1000" style="border:1px solid #000000;"></canvas>
 </body>
 </html>

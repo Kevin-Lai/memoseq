@@ -1,4 +1,4 @@
-const Game = require("./game.js");
+import Game from "./game"
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,13 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    let sequence = document.getElementById("seq");
-    document.addEventListener('keypress', (e)=>{
-        sequence.textContent += `${e.key}`
-    });
+    // let sequence = document.getElementById("seq");
+    // document.addEventListener('keypress', (e)=>{
+    //     sequence.textContent += `${e.key}`
+    // });
 
-
-    const game = new Game(ctx);
+    const game = new Game(ctx,10);
     game.run();
 
 
