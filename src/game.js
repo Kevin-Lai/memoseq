@@ -112,14 +112,13 @@ class Game {
         this.playRound();
 
         document.addEventListener('keypress', (e)=>{
-            this.enteredSequence += e.key;
-            this.enterSeq.textContent += `${e.key}`;
-
             if(this.enteredSequence !== this.gameSequence && this.enteredSequence){
                 this.gameOver = true;
                 console.log("Game Over!");
             }
 
+            this.enteredSequence += e.key;
+            this.enterSeq.textContent += `${e.key}`;
         });
 
         // while(!this.gameOver){
