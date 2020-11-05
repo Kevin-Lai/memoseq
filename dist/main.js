@@ -86,26 +86,25 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/game.js":
+/*!*********************!*\
+  !*** ./src/game.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("class Game {\n    constructor(ctx){\n        this.sequenceKeys = [\n            \"w\",\"a\",\"s\",\"d\",\n            \"1\", \"2\", \"3\",\n            \"4\", \"5\", \"6\",\n            \"7\", \"8\", \"9\"\n        ];\n\n        this.DIM_X = 1000;\n        this.DIM_Y = 1000;\n        this.BG_COLOR = \"red\";\n        this.ctx = ctx;\n    }\n    \n    generateRandomSequence(array, numberOfItems){\n        let randomIndices = [];\n        for(let i = 0; i<numberOfItems; i++){\n            randomIndices.push(Math.floor(Math.random() * array.length));\n        }\n        return randomIndices;\n    }\n\n    draw(){\n        // ctx.fillRect(x, y, width, height);\n        this.ctx.clearRect(0, 0, this.DIM_X, this.DIM_Y);\n        this.ctx.fillStyle = this.BG_COLOR;\n        this.ctx.fillRect(0, 0, this.DIM_X, this.DIM_Y);\n\n        \n        // arc(x, y, radius, startAngle, endAngle)\n        this.ctx.beginPath();\n        this.ctx.arc(95, 50, 40, 0, 2 * Math.PI);\n        this.ctx.stroke();\n\n        this.ctx.beginPath();\n        this.ctx.arc(250, 50, 40, 0, 2 * Math.PI);\n        this.ctx.stroke();\n\n    }\n\n    run(){\n        let gameOver = false;\n        // while(!gameOver){\n            \n        // }\n        this.draw();\n    }\n\n}\n\n\nmodule.exports = Game;\n\n//# sourceURL=webpack:///./src/game.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sequence__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sequence */ \"./src/sequence.js\");\n/* harmony import */ var _sequence__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sequence__WEBPACK_IMPORTED_MODULE_0__);\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n    const mainCanvas = document.getElementById(\"game-canvas\");\n    mainCanvas.width = 500;\n    mainCanvas.height = 500;\n\n\n    const ctx = mainCanvas.getContext(\"2d\");\n    ctx.fillStyle = \"red\";\n    ctx.fillRect(0, 0, 500, 500);\n})\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/sequence.js":
-/*!*************************!*\
-  !*** ./src/sequence.js ***!
-  \*************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("const sequence = document.getElementById('seq');\n\n\n\n//# sourceURL=webpack:///./src/sequence.js?");
+eval("const Game = __webpack_require__(/*! ./game.js */ \"./src/game.js\");\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n    const mainCanvas = document.getElementById(\"game-canvas\");\n    // mainCanvas.width = 500;\n    // mainCanvas.height = 500;\n\n    const ctx = mainCanvas.getContext(\"2d\");\n\n\n\n    let sequence = document.getElementById(\"seq\");\n    document.addEventListener('keypress', (e)=>{\n        sequence.textContent += `${e.key}`\n    });\n\n\n    const game = new Game(ctx);\n    game.run();\n\n\n\n    // ctx.fillStyle = \"red\";\n    // ctx.fillRect(0, 0, 500, 500);\n})\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

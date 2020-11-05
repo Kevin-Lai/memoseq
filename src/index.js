@@ -1,12 +1,26 @@
-import sequence from "./sequence";
+const Game = require("./game.js");
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const mainCanvas = document.getElementById("game-canvas");
-    mainCanvas.width = 500;
-    mainCanvas.height = 500;
-
+    // mainCanvas.width = 500;
+    // mainCanvas.height = 500;
 
     const ctx = mainCanvas.getContext("2d");
-    ctx.fillStyle = "red";
-    ctx.fillRect(0, 0, 500, 500);
+
+
+
+    let sequence = document.getElementById("seq");
+    document.addEventListener('keypress', (e)=>{
+        sequence.textContent += `${e.key}`
+    });
+
+
+    const game = new Game(ctx);
+    game.run();
+
+
+
+    // ctx.fillStyle = "red";
+    // ctx.fillRect(0, 0, 500, 500);
 })
