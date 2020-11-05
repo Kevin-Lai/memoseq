@@ -8,7 +8,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const ctx = mainCanvas.getContext("2d");
 
+    let countdown = 31;
 
+    let intervalID = setInterval(decrementTimer, 1000);
+
+    function decrementTimer(){
+        countdown--;
+        // console.log(countdown);
+        if(countdown < 0){
+            document.getElementById("timer").innerHTML = "expired";
+            clearInterval(intervalID);
+        }
+        else{
+            document.getElementById("timer").innerHTML = countdown;
+        }
+    }
 
     // let sequence = document.getElementById("seq");
     // document.addEventListener('keypress', (e)=>{
