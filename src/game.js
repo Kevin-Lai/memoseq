@@ -12,16 +12,16 @@ class Game {
         this.BG_COLOR = "red";
         this.ctx = ctx;
 
-        this.gameSequence = this.generateRandomItem();
+        this.gameSequence = "";
 
         this.timeLimit = timeLimit;
-        this.countdown = 0;
+        this.countdown = timeLimit;
 
         // this.decrementTimer = this.decrementTimer.bind(this);
 
         this.enteredSequence = "";
         this.gameOver = false;
-
+        this.highscore = 0;
 
         this.gameSeq = document.getElementById("game-seq");
         this.enterSeq = document.getElementById("enter-seq");
@@ -96,6 +96,8 @@ class Game {
         this.gameSeq.textContent += randomItem;
         this.gameSequence += randomItem;
         
+        console.log(this.gameSequence);
+
         // while(this.countdown >= 0 ){
             
         //     // draw needs to occur before the interval
@@ -107,19 +109,52 @@ class Game {
         // }
     }
 
+    countdownTimer(){
+        let intervalID = setInterval(decrementTimer, 1000);
+
+        let that = this;
+
+        function decrementTimer(){
+            that.countdown--;
+            // console.log(countdown);
+            if(that.countdown < 0){
+                document.getElementById("timer").innerHTML = "expired";
+                clearInterval(intervalID);
+                that.gameOver = true;
+                console.log("Time Over!")
+            }
+            else{
+                document.getElementById("timer").innerHTML = that.countdown;
+            }
+        }
+    }
+
     run(){
 
         this.playRound();
 
-        document.addEventListener('keypress', (e)=>{
+        document.addEventListener('keydown', (e)=>{
+            this.enteredSequence += e.key;
+            this.enterSeq.textContent += `${e.key}`;
+
             if(this.enteredSequence !== this.gameSequence && this.enteredSequence){
                 this.gameOver = true;
                 console.log("Game Over!");
+                console.log(this.highscore);
             }
 
-            this.enteredSequence += e.key;
-            this.enterSeq.textContent += `${e.key}`;
+            this.countdown = this.timeLimit;
+            this.highscore++;
+            this.playRound();
         });
+
+        this.countdownTimer();
+
+        // while(!this.gameOver){
+        //     setInterval(()=>(this.playRound()), 30000);
+
+        //     // this.playRound();
+        // }
 
         // while(!this.gameOver){
         //     //setTimeout(this.playRound(), 30000);
