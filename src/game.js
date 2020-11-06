@@ -20,14 +20,17 @@ class Game {
         // this.decrementTimer = this.decrementTimer.bind(this);
 
         this.enteredSequence = "";
-        this.gameOver = false;
-        this.highscore = 0;
+        // this.gameOver = false;
+        this.highscore = 1;
 
         this.gameSeq = document.getElementById("game-seq");
         this.enterSeq = document.getElementById("enter-seq");
 
         this.playRound = this.playRound.bind(this);
 
+        this.gameOverDisplay = document.getElementById("game-over");
+
+        this.startInterval = "";
     }
     
     generateRandomItem(){
@@ -110,7 +113,7 @@ class Game {
     }
 
     countdownTimer(){
-        let intervalID = setInterval(decrementTimer, 1000);
+        this.startInterval = setInterval(decrementTimer, 1000);
 
         let that = this;
 
@@ -119,9 +122,11 @@ class Game {
             // console.log(countdown);
             if(that.countdown < 0){
                 document.getElementById("timer").innerHTML = "expired";
-                clearInterval(intervalID);
-                that.gameOver = true;
+                clearInterval(that.startInterval);
+                // that.gameOver = true;
+                that.gameOverDisplay.innerHTML = "Game Over";
                 console.log("Time Over!");
+                console.log(that.highscore);
             }
             else{
                 document.getElementById("timer").innerHTML = that.countdown;
@@ -133,22 +138,29 @@ class Game {
 
         this.playRound();
 
+        this.gameOverDisplay.addEventListener("change", ()=>{
+            clearInterval(this.startInterval);
+            console.log("Game Over!");
+            console.log(this.highscore);
+        })
+
         document.addEventListener('keydown', (e)=>{
             this.enteredSequence += e.key;
             this.enterSeq.textContent += `${e.key}`;
 
             // Need to wait for the user to fill up the input first
             if(this.enteredSequence.length === this.gameSequence.length){
+                console.log("Entered");
                 if(this.enteredSequence !== this.gameSequence && this.enteredSequence){
-                    this.gameOver = true;
-                    console.log("Game Over!");
-                    console.log(this.highscore);
+                    // this.gameOver = true;
+                    this.gameOverDisplay.innerHTML = "Game Over";
                 }
                 else if(this.enteredSequence === this.gameSequence && this.enteredSequence){
                     // if the user entered the correct sequence, then the level increases
                     // and another item is added to the sequence
                     // and the countdown is reset
                     this.enteredSequence = "";
+                    this.enterSeq.textContent = "User entered: ";
                     this.countdown = this.timeLimit;
                     this.highscore++;
                     this.playRound();
