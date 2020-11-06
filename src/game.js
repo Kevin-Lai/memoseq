@@ -1,5 +1,6 @@
 class Game {
-    constructor(ctx, timeLimit){
+    // constructor(ctx, timeLimit){
+    constructor(timeLimit){
         this.sequenceKeys = [
             "w","a","d",
             "1", "2", "3",
@@ -7,24 +8,28 @@ class Game {
             "7", "8", "9"
         ];
 
-        this.DIM_X = 800;
-        this.DIM_Y = 800;
-        this.BG_COLOR = "red";
-        this.ctx = ctx;
+        // this.DIM_X = 800;
+        // this.DIM_Y = 800;
+        // this.BG_COLOR = "red";
+        // this.ctx = ctx;
 
         this.gameSequence = "";
 
-        this.timeLimit = timeLimit;
-        this.countdown = timeLimit;
-
+        this.timeLimit = timeLimit+1;
+        this.countdown = timeLimit+1;
+        this.timer = document.getElementById("timer");
         // this.decrementTimer = this.decrementTimer.bind(this);
 
         this.enteredSequence = "";
         // this.gameOver = false;
+
         this.highscore = 1;
+        this.level = document.getElementById("level");
+        this.level.innerHTML = this.highscore;
 
         this.gameSeq = document.getElementById("game-seq");
         this.enterSeq = document.getElementById("enter-seq");
+        this.drawSeq = document.getElementById("draw-seq");
 
         this.playRound = this.playRound.bind(this);
 
@@ -52,7 +57,7 @@ class Game {
 
         this.gameSequence.forEach(
             (element) => {
-                let newEle = document.createElement("div");
+                let newEle = document.createElement("li");
                 
                 if (element === "w"){
                     newEle.className = "triangle";
@@ -99,6 +104,25 @@ class Game {
         this.gameSeq.textContent += randomItem;
         this.gameSequence += randomItem;
         
+        let newEle = document.createElement("div");
+                
+        if (randomItem === "w"){
+            newEle.className = "triangle";
+        }
+        else if (randomItem === "a"){
+            newEle.className = "square";
+        }
+        else if (randomItem === "d"){
+            newEle.className = "circle";
+        }
+        else {
+            newEle.className = "number";
+            newEle.innerHTML = randomItem;
+        }
+        
+        this.drawSeq.appendChild(newEle);
+
+
         console.log(this.gameSequence);
 
         // while(this.countdown >= 0 ){
@@ -121,7 +145,7 @@ class Game {
             that.countdown--;
             // console.log(countdown);
             if(that.countdown < 0){
-                document.getElementById("timer").innerHTML = "expired";
+                that.timer.innerHTML = "0";
                 clearInterval(that.startInterval);
                 // that.gameOver = true;
                 that.gameOverDisplay.innerHTML = "Game Over";
@@ -129,7 +153,7 @@ class Game {
                 console.log(that.highscore);
             }
             else{
-                document.getElementById("timer").innerHTML = that.countdown;
+                that.timer.innerHTML = that.countdown;
             }
         }
     }
@@ -137,12 +161,6 @@ class Game {
     run(){
 
         this.playRound();
-
-        this.gameOverDisplay.addEventListener("change", ()=>{
-            clearInterval(this.startInterval);
-            console.log("Game Over!");
-            console.log(this.highscore);
-        })
 
         document.addEventListener('keydown', (e)=>{
             this.enteredSequence += e.key;
@@ -154,6 +172,10 @@ class Game {
                 if(this.enteredSequence !== this.gameSequence && this.enteredSequence){
                     // this.gameOver = true;
                     this.gameOverDisplay.innerHTML = "Game Over";
+                    clearInterval(this.startInterval);
+                    this.timer.innerHTML = "0";
+                    console.log("Game Over!");
+                    console.log(this.highscore);
                 }
                 else if(this.enteredSequence === this.gameSequence && this.enteredSequence){
                     // if the user entered the correct sequence, then the level increases
@@ -163,6 +185,7 @@ class Game {
                     this.enterSeq.textContent = "User entered: ";
                     this.countdown = this.timeLimit;
                     this.highscore++;
+                    this.level.innerHTML = this.highscore;
                     this.playRound();
                 }
             }
