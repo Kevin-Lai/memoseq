@@ -8,6 +8,15 @@ class Game {
             "7", "8", "9"
         ];
 
+        this.colors = [
+            "red",
+            "blue",
+            "yellow",
+            "green",
+            "orange",
+            "purple"
+        ];
+
         // this.DIM_X = 800;
         // this.DIM_Y = 800;
         // this.BG_COLOR = "red";
@@ -41,6 +50,11 @@ class Game {
     generateRandomItem(){
         let randomIndex = Math.floor(Math.random() * this.sequenceKeys.length)
         return this.sequenceKeys[randomIndex];
+    }
+
+    generateRandomColor(){
+        let randomIndex = Math.floor(Math.random() * this.colors.length)
+        return this.colors[randomIndex];
     }
 
     draw(){
@@ -100,6 +114,7 @@ class Game {
     playRound(){
 
         let randomItem = this.generateRandomItem();
+        let randomColor = this.generateRandomColor();
 
         this.gameSeq.textContent += randomItem;
         this.gameSequence += randomItem;
