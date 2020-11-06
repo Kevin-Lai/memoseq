@@ -121,7 +121,7 @@ class Game {
                 document.getElementById("timer").innerHTML = "expired";
                 clearInterval(intervalID);
                 that.gameOver = true;
-                console.log("Time Over!")
+                console.log("Time Over!");
             }
             else{
                 document.getElementById("timer").innerHTML = that.countdown;
@@ -137,15 +137,23 @@ class Game {
             this.enteredSequence += e.key;
             this.enterSeq.textContent += `${e.key}`;
 
-            if(this.enteredSequence !== this.gameSequence && this.enteredSequence){
-                this.gameOver = true;
-                console.log("Game Over!");
-                console.log(this.highscore);
+            // Need to wait for the user to fill up the input first
+            if(this.enteredSequence.length === this.gameSequence.length){
+                if(this.enteredSequence !== this.gameSequence && this.enteredSequence){
+                    this.gameOver = true;
+                    console.log("Game Over!");
+                    console.log(this.highscore);
+                }
+                else if(this.enteredSequence === this.gameSequence && this.enteredSequence){
+                    // if the user entered the correct sequence, then the level increases
+                    // and another item is added to the sequence
+                    // and the countdown is reset
+                    this.enteredSequence = "";
+                    this.countdown = this.timeLimit;
+                    this.highscore++;
+                    this.playRound();
+                }
             }
-
-            this.countdown = this.timeLimit;
-            this.highscore++;
-            this.playRound();
         });
 
         this.countdownTimer();
