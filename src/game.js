@@ -11,7 +11,7 @@ class Game {
         this.colors = [
             "red",
             "blue",
-            "yellow",
+            "brown",
             "green",
             "orange",
             "purple"
@@ -123,16 +123,20 @@ class Game {
                 
         if (randomItem === "w"){
             newEle.className = "triangle";
+            newEle.style.borderBottomColor = randomColor;
         }
         else if (randomItem === "a"){
             newEle.className = "square";
+            newEle.style.backgroundColor = randomColor;
         }
         else if (randomItem === "d"){
             newEle.className = "circle";
+            newEle.style.backgroundColor = randomColor;
         }
         else {
             newEle.className = "number";
             newEle.innerHTML = randomItem;
+            newEle.style.color = randomColor;
         }
         
         this.drawSeq.appendChild(newEle);
