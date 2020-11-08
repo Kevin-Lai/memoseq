@@ -35,8 +35,11 @@ class Game {
         this.level = document.getElementById("level");
         this.level.innerHTML = this.highscore;
 
-        this.gameSeq = document.getElementById("game-seq");
-        this.enterSeq = document.getElementById("enter-seq");
+        // gameSeq and enterSeq are only used for testing purposes
+        // this.gameSeq = document.getElementById("game-seq");
+        // this.enterSeq = document.getElementById("enter-seq");
+
+        // This is the display of the sequence
         this.drawSeq = document.getElementById("draw-seq");
 
         this.playRound = this.playRound.bind(this);
@@ -108,7 +111,7 @@ class Game {
         let randomItem = this.generateRandomItem();
         let randomColor = this.generateRandomColor();
 
-        this.gameSeq.textContent += randomItem;
+        // this.gameSeq.textContent += randomItem;
         this.gameSequence += randomItem;
         
         let newEle = document.createElement("div");
@@ -134,17 +137,7 @@ class Game {
         this.drawSeq.appendChild(newEle);
 
 
-        console.log(this.gameSequence);
-
-        // while(this.countdown >= 0 ){
-            
-        //     // draw needs to occur before the interval
-        //     // this.draw();
-
-        //     setTimeout(this.decrementTimer(), 1000);
-
-        //     //console.log(this.timeLimit);
-        // }
+        // console.log(this.gameSequence);
     }
 
     countdownTimer(){
@@ -160,13 +153,20 @@ class Game {
                 clearInterval(that.startInterval);
                 that.gameOverDisplay.innerHTML = "Game Over";
                 that.finalScoreDisplay.innerHTML = "Highscore: " + that.highscore;
-                console.log("Time Over!");
-                console.log(that.highscore);
+                // console.log("Time Over!");
+                // console.log(that.highscore);
             }
             else{
                 that.timer.innerHTML = that.countdown;
             }
         }
+    }
+
+    resetGameLogic(){
+        this.enteredSequence = "";
+        // this.enterSeq.textContent = "User entered: ";
+        this.countdown = this.timeLimit;
+        this.checkIndex = 0;
     }
 
     run(){
@@ -175,7 +175,7 @@ class Game {
 
         document.addEventListener('keydown', (e)=>{
             this.enteredSequence += e.key;
-            this.enterSeq.textContent += `${e.key}`;
+            // this.enterSeq.textContent += `${e.key}`;
 
             // console.log("Entered key: " + e.key);
             // console.log("Check: " + this.gameSequence + " Index: " + this.checkIndex);
@@ -186,8 +186,8 @@ class Game {
                 this.finalScoreDisplay.innerHTML = "Highscore: " + this.highscore;
                 clearInterval(this.startInterval);
                 this.timer.innerHTML = "0";
-                console.log("Game Over!");
-                console.log(this.highscore);
+                // console.log("Game Over!");
+                // console.log(this.highscore);
             }
 
             this.checkIndex++;
@@ -200,12 +200,9 @@ class Game {
                 // and another item is added to the sequence
                 // and the countdown is reset.
                 // console.log("Matched");
-                this.enteredSequence = "";
-                this.enterSeq.textContent = "User entered: ";
-                this.countdown = this.timeLimit;
+                this.resetGameLogic();
                 this.highscore++;
                 this.level.innerHTML = this.highscore;
-                this.checkIndex = 0;
                 this.playRound();
             }
         });
