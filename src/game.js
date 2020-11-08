@@ -48,8 +48,10 @@ class Game {
         this.finalScoreDisplay = document.getElementById("final-score");
 
         this.startInterval = "";
-
         this.checkIndex = 0;
+
+        this.startButton = document.getElementById("start-button");
+        this.hideBlock = document.getElementById("start-block");
     }
     
     generateRandomItem(){
@@ -162,6 +164,13 @@ class Game {
         }
     }
 
+    start(){
+        this.startButton.addEventListener("click", ()=>{
+            this.hideBlock.style.display = "none";
+            this.run();
+        });
+    }
+
     resetGameLogic(){
         this.enteredSequence = "";
         // this.enterSeq.textContent = "User entered: ";
@@ -181,7 +190,7 @@ class Game {
             // console.log("Check: " + this.gameSequence + " Index: " + this.checkIndex);
 
             if(e.key !== this.gameSequence[this.checkIndex]){
-                console.log("Entered " + this.checkIndex);
+                // console.log("Entered " + this.checkIndex);
                 this.gameOverDisplay.innerHTML = "Game Over";
                 this.finalScoreDisplay.innerHTML = "Highscore: " + this.highscore;
                 clearInterval(this.startInterval);
