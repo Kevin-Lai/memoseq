@@ -11,7 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // const game = new Game(ctx,31);
 
     const game = new Game(10);
-    game.run()
+
+    let startButton = document.getElementById("start-button");
+    startButton.addEventListener("click", ()=>{
+        let hideBlock = document.getElementById("start-block");
+        hideBlock.style.display = "none";
+        game.run();
+    });
     
     // ctx.fillStyle = "red";
     // ctx.fillRect(0, 0, 500, 500);

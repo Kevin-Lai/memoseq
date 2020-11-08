@@ -27,6 +27,7 @@ class Game {
         this.timeLimit = timeLimit+1;
         this.countdown = timeLimit+1;
         this.timer = document.getElementById("timer");
+        this.timer.innerHTML = timeLimit;
 
         this.enteredSequence = "";
 
