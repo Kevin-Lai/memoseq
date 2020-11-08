@@ -42,6 +42,7 @@ class Game {
         this.playRound = this.playRound.bind(this);
 
         this.gameOverDisplay = document.getElementById("game-over");
+        this.finalScoreDisplay = document.getElementById("final-score");
 
         this.startInterval = "";
 
@@ -158,6 +159,7 @@ class Game {
                 that.timer.innerHTML = "0";
                 clearInterval(that.startInterval);
                 that.gameOverDisplay.innerHTML = "Game Over";
+                that.finalScoreDisplay.innerHTML = "Highscore: " + that.highscore;
                 console.log("Time Over!");
                 console.log(that.highscore);
             }
@@ -181,6 +183,7 @@ class Game {
             if(e.key !== this.gameSequence[this.checkIndex]){
                 console.log("Entered " + this.checkIndex);
                 this.gameOverDisplay.innerHTML = "Game Over";
+                this.finalScoreDisplay.innerHTML = "Highscore: " + this.highscore;
                 clearInterval(this.startInterval);
                 this.timer.innerHTML = "0";
                 console.log("Game Over!");

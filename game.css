@@ -65,6 +65,14 @@
     color: red;
 }
 
+#final-score {
+    display: block;
+    text-align: center;
+    font-size: 100px;
+    font-weight: bold;
+    color: blue;
+}
+
 #start-block{
     display: flex;
     justify-content: center;
