@@ -1,6 +1,6 @@
 class Game {
     // constructor(ctx, timeLimit){
-    constructor(timeLimit){
+    constructor(inputTimeLimit){
         this.sequenceKeys = [
             "w","a","d",
             "1", "2", "3",
@@ -24,10 +24,10 @@ class Game {
 
         this.gameSequence = "";
 
-        this.timeLimit = timeLimit+1;
-        this.countdown = timeLimit+1;
+        this.timeLimit = inputTimeLimit+1;
+        this.countdown = inputTimeLimit+1;
         this.timer = document.getElementById("timer");
-        this.timer.innerHTML = timeLimit;
+        this.timer.innerHTML = inputTimeLimit;
 
         this.enteredSequence = "";
 
@@ -51,7 +51,7 @@ class Game {
         this.checkIndex = 0;
 
         this.startButton = document.getElementById("start-button");
-        this.hideBlock = document.getElementById("start-block");
+        this.startBlock = document.getElementById("start-block");
     }
     
     generateRandomItem(){
@@ -138,8 +138,7 @@ class Game {
         
         this.drawSeq.appendChild(newEle);
 
-
-        // console.log(this.gameSequence);
+        //console.log(this.gameSequence);
     }
 
     countdownTimer(){
@@ -155,6 +154,7 @@ class Game {
                 clearInterval(that.startInterval);
                 that.gameOverDisplay.innerHTML = "Game Over";
                 that.finalScoreDisplay.innerHTML = "Highscore: " + that.highscore;
+                that.reapplyButtonStyling();
                 // console.log("Time Over!");
                 // console.log(that.highscore);
             }
@@ -164,39 +164,28 @@ class Game {
         }
     }
 
-    start(){
-        this.startButton.addEventListener("click", ()=>{
-            this.hideBlock.style.display = "none";
-            this.run();
-        });
-    }
-
-    resetGameLogic(){
-        this.enteredSequence = "";
-        // this.enterSeq.textContent = "User entered: ";
-        this.countdown = this.timeLimit;
-        this.checkIndex = 0;
-    }
-
-    run(){
-
-        this.playRound();
-
+    setup(){
+        // This needed to be in its own function to prevent
+        // attaching additional keydown listeners after restart.
+        // NOTE: There should only be 1 keydown event listener!
         document.addEventListener('keydown', (e)=>{
             this.enteredSequence += e.key;
             // this.enterSeq.textContent += `${e.key}`;
 
-            // console.log("Entered key: " + e.key);
-            // console.log("Check: " + this.gameSequence + " Index: " + this.checkIndex);
+            //console.log("Entered key: " + e.key);
+            //console.log("Check: " + this.gameSequence + " Index: " + this.checkIndex);
 
             if(e.key !== this.gameSequence[this.checkIndex]){
-                // console.log("Entered " + this.checkIndex);
+                //console.log("Entered " + this.checkIndex);
+                
                 this.gameOverDisplay.innerHTML = "Game Over";
                 this.finalScoreDisplay.innerHTML = "Highscore: " + this.highscore;
                 clearInterval(this.startInterval);
                 this.timer.innerHTML = "0";
-                // console.log("Game Over!");
-                // console.log(this.highscore);
+                this.reapplyButtonStyling();
+                
+                //console.log("Game Over!");
+                //console.log(this.highscore);
             }
 
             this.checkIndex++;
@@ -209,13 +198,52 @@ class Game {
                 // and another item is added to the sequence
                 // and the countdown is reset.
                 // console.log("Matched");
-                this.resetGameLogic();
+                this.resetRound();
                 this.highscore++;
                 this.level.innerHTML = this.highscore;
                 this.playRound();
             }
         });
+    }
 
+    start(){
+        this.startButton.addEventListener("click", ()=>{
+            this.startBlock.style.display = "none";
+            this.restartGame();
+            this.run();
+        });
+    }
+
+    resetRound(){
+        this.enteredSequence = "";
+        // this.enterSeq.textContent = "User entered: ";
+        this.countdown = this.timeLimit;
+        this.checkIndex = 0;
+    }
+
+    restartGame(){
+        this.resetRound();
+        this.highscore = 1;
+        this.gameSequence = "";
+        this.timer.innerHTML = this.timeLimit-1;
+        this.level.innerHTML = this.highscore;
+        this.startInterval = "";
+        this.clearRestartDisplay();
+    }
+    
+    clearRestartDisplay(){
+        this.gameOverDisplay.innerHTML = "";
+        this.finalScoreDisplay.innerHTML = "";
+        this.drawSeq.innerHTML = "";
+    }
+
+    reapplyButtonStyling(){
+        this.startBlock.style.display = "flex";
+        this.startButton.textContent = "Restart";
+    }
+
+    run(){
+        this.playRound();
         this.countdownTimer();
     }
 }

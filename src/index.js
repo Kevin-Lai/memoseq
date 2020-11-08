@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // const game = new Game(ctx,31);
 
     const game = new Game(10);
+    game.setup();
     game.start();
     
     // ctx.fillStyle = "red";
