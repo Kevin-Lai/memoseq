@@ -29,6 +29,43 @@
     <div id="start-block">
         <button id="start-button">START</button>
     </div>
+    <div id="ctrls-block">
+        <button id="ctrls-button">Controls</button>
+    </div>
+    <div id="ctrls-modal">
+        <div id="ctrls-body">
+            <div id="close-block">
+                <div></div>
+                <label id="ctrls-close">x</label>
+            </div>
+            <h2 id="ctrls-title">Instructions</h2>
+            <h3 id="ctrls-goal">Memorize and enter the correct sequence of keys to match the sequence of shapes and numbers.</h3>
+            <h3 id="ctrls-goal">Each subsequent level will add a new element to the shown sequence.</h3>
+            <div id="ctrls-instructions">
+                <h4 class="ctrls-text">The following shapes and numbers correspond to the shown specified keys.</h4>
+                <div class="ctrls-sequence">
+                    <div class="ctrl-key">
+                        <div class="triangle"></div>
+                        <label class="ctrl-key-label">= W</label>
+                    </div>
+                    <div class="ctrl-key">
+                        <div class="square"></div>
+                        <label class="ctrl-key-label"> = A</label>
+                    </div>
+                    <div class="ctrl-key">
+                        <div class="circle"></div>
+                        <label class="ctrl-key-label"> = D</label>
+                    </div>
+                    <div class="ctrl-key">
+                        <div class="number">#</div>
+                        <label class="ctrl-key-label"> = Number Keys</label>
+                    </div>
+                </div>
+                <h4 class="ctrls-text">Entering an incorrect key in the sequence will result in a GAME OVER!</h4>
+                <h4 class="ctrls-game-over">GAME OVER</h4>
+            </div>
+        </div>
+    </div>
     <div id="game-over"></div>
     <div id="final-score"></div>
     <!-- <canvas id="game-canvas" width="1000" height="1000" style="border:1px solid #000000;"></canvas> -->

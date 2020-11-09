@@ -76,10 +76,10 @@
     color: blue;
 }
 
-#start-block{
+#start-block, #ctrls-block{
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     /* border: 2px solid black; */
 }
 
@@ -92,6 +92,107 @@
     box-shadow: 4px 4px black;
 }
 
-#start-button:hover {
+#start-button:hover, #ctrls-button:hover {
     background-color: rgb(255, 217, 0);
+}
+
+#ctrls-button {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: yellow;
+    border-radius: 25px;
+    box-shadow: 4px 4px black;
+    width: 200px;
+}
+
+
+#ctrls-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding-top: 150px;
+    overflow: auto;
+}
+
+#ctrls-body {
+    background-color: white;
+    width: 1000px;
+    height: 600px;
+    margin: auto;
+    padding: 10px 30px 30px 30px;
+    overflow: scroll;
+}
+
+#ctrls-close {
+    color: black;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#ctrls-close:hover {
+    color: red;
+    cursor: pointer;
+}
+
+#close-block{
+    display: flex;
+    justify-content: space-between;
+}
+
+#ctrls-title {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: teal;
+}
+
+#ctrls-goal {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: brown;
+}
+
+.ctrls-sequence {
+    margin-bottom: 30px;
+}
+
+.ctrls-text {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: royalblue;
+}
+
+.ctrl-key-label {
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.ctrl-key {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.ctrls-game-over {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 80px;
+    font-weight: bold;
+    color: red;
 }

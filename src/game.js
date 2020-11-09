@@ -52,6 +52,11 @@ class Game {
 
         this.startButton = document.getElementById("start-button");
         this.startBlock = document.getElementById("start-block");
+
+        this.ctrlsBlock = document.getElementById("ctrls-block");
+        this.ctrlsButton = document.getElementById("ctrls-button");
+        this.ctrlsModal = document.getElementById("ctrls-modal");
+        this.ctrlsClose = document.getElementById("ctrls-close");
     }
     
     generateRandomItem(){
@@ -206,8 +211,18 @@ class Game {
         });
     }
 
+    ctrls(){
+        this.ctrlsButton.addEventListener("click", ()=>{
+            this.ctrlsModal.style.display = "block";
+        });
+        this.ctrlsClose.addEventListener("click", ()=>{
+            this.ctrlsModal.style.display = "none";
+        });
+    }
+
     start(){
         this.startButton.addEventListener("click", ()=>{
+            this.ctrlsBlock.style.display = "none";
             this.startBlock.style.display = "none";
             this.restartGame();
             this.run();
