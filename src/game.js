@@ -25,6 +25,7 @@ class Game {
 
         this.enteredSequence = "";
 
+        this.bestScore = 0;
         this.highscore = 1;
         this.level = document.getElementById("level");
         this.level.innerHTML = this.highscore;
@@ -36,6 +37,7 @@ class Game {
 
         this.gameOverDisplay = document.getElementById("game-over");
         this.finalScoreDisplay = document.getElementById("final-score");
+        this.bestScoreDisplay = document.getElementById("best-score");
 
         this.startInterval = "";
         this.checkIndex = 0;
@@ -100,11 +102,7 @@ class Game {
             that.countdown--;
             // console.log(countdown);
             if(that.countdown < 0){
-                that.timer.innerHTML = "0";
-                clearInterval(that.startInterval);
-                that.gameOverDisplay.innerHTML = "Game Over";
-                that.finalScoreDisplay.innerHTML = "Highscore: " + that.highscore;
-                that.reapplyButtonStyling();
+                that.gameOver();
                 // console.log("Time Over!");
                 // console.log(that.highscore);
             }
@@ -127,12 +125,8 @@ class Game {
             if(e.key !== this.gameSequence[this.checkIndex]){
                 //console.log("Entered " + this.checkIndex);
                 
-                this.gameOverDisplay.innerHTML = "Game Over";
-                this.finalScoreDisplay.innerHTML = "Highscore: " + this.highscore;
-                clearInterval(this.startInterval);
-                this.timer.innerHTML = "0";
-                this.reapplyButtonStyling();
-                
+                this.gameOver();
+
                 //console.log("Game Over!");
                 //console.log(this.highscore);
             }
@@ -173,6 +167,19 @@ class Game {
         });
     }
 
+    gameOver(){
+        this.gameOverDisplay.innerHTML = "Game Over";
+        this.finalScoreDisplay.innerHTML = "Highscore: " + this.highscore;
+        clearInterval(this.startInterval);
+        this.timer.innerHTML = "0";
+        this.reapplyButtonStyling();
+        
+        if (this.highscore > this.bestScore){
+            this.bestScore = this.highscore;
+        }
+        this.bestScoreDisplay.innerHTML = "Best Score: " + this.bestScore;
+    }
+
     resetRound(){
         this.enteredSequence = "";
         this.countdown = this.timeLimit;
@@ -192,6 +199,7 @@ class Game {
     clearRestartDisplay(){
         this.gameOverDisplay.innerHTML = "";
         this.finalScoreDisplay.innerHTML = "";
+        this.bestScoreDisplay.innerHTML = "";
         this.drawSeq.innerHTML = "";
     }
 

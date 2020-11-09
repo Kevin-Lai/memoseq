@@ -68,13 +68,21 @@
     color: red;
 }
 
-#final-score {
+#final-score, #best-score {
     display: block;
     text-align: center;
     font-size: 100px;
     font-weight: bold;
+}
+
+#final-score{
     color: blue;
 }
+
+#best-score {
+    color: rgb(51, 214, 78);
+}
+
 
 #start-block, #ctrls-block{
     display: flex;
