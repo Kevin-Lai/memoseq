@@ -38,6 +38,7 @@ class Game {
         this.gameOverDisplay = document.getElementById("game-over");
         this.finalScoreDisplay = document.getElementById("final-score");
         this.bestScoreDisplay = document.getElementById("best-score");
+        this.createdBy = document.getElementById("created-by");
 
         this.startInterval = "";
         this.checkIndex = 0;
@@ -162,6 +163,7 @@ class Game {
         this.startButton.addEventListener("click", ()=>{
             this.ctrlsBlock.style.display = "none";
             this.startBlock.style.display = "none";
+            this.createdBy.style.display = "none";
             this.restartGame();
             this.run();
         });

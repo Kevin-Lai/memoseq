@@ -9,7 +9,7 @@
 
     <script src="./dist/main.js"></script>
 
-    <title>Document</title>
+    <title>MemoSeq By Kevin Lai</title>
 </head>
 <body>
     <div class="timer-holder">
@@ -17,15 +17,31 @@
         <h1>MemoSeq</h1>
         <div id="level"></div>
     </div>
-    <div id="draw-seq">
-
-    </div>
+    <div id="draw-seq"></div>
     <div id="start-block">
         <button id="start-button">START</button>
     </div>
     <div id="ctrls-block">
         <button id="ctrls-button">Controls</button>
     </div>
+    <div id="created-by">
+        <label id="created-label">Created By</label>
+        <div class="kevin-name">
+            <div id="created-k" class="number">K</div>
+            <div id="created-e" class="number">E</div>
+            <div id="created-v" class="number">V</div>
+            <div id="created-i" class="number">I</div>
+            <div id="created-n" class="number">N</div>
+        </div>
+        <div class="kevin-name">
+            <div id="created-l" class="number">L</div>
+            <div id="created-a" class="number">A</div>
+            <div id="created-ii" class="number">I</div>
+        </div>
+    </div>
+    <div id="game-over"></div>
+    <div id="final-score"></div>
+    <div id="best-score"></div>
     <div id="ctrls-modal">
         <div id="ctrls-body">
             <div id="close-block">
@@ -60,8 +76,5 @@
             </div>
         </div>
     </div>
-    <div id="game-over"></div>
-    <div id="final-score"></div>
-    <div id="best-score"></div>
 </body>
 </html>
