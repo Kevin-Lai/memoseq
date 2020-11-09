@@ -1,6 +1,6 @@
 # MemoSeq
 
-MemoSeq is a memory game that involves memorizing a sequence of shapes and numbers and entering the correct corresponding keys.
+MemoSeq is a memory game that involves memorizing a sequence of shapes and numbers and entering the corresponding keys in the correct order.
 
 ## Rules:
 1) Players must match the randomly-generated number+shape sequence in the correct order using assigned keys on the key board within the time limit for each level.
