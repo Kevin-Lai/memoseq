@@ -1,5 +1,4 @@
 class Game {
-    // constructor(ctx, timeLimit){
     constructor(inputTimeLimit){
         this.sequenceKeys = [
             "w","a","d",
@@ -17,11 +16,6 @@ class Game {
             "purple"
         ];
 
-        // this.DIM_X = 800;
-        // this.DIM_Y = 800;
-        // this.BG_COLOR = "red";
-        // this.ctx = ctx;
-
         this.gameSequence = "";
 
         this.timeLimit = inputTimeLimit+1;
@@ -34,10 +28,6 @@ class Game {
         this.highscore = 1;
         this.level = document.getElementById("level");
         this.level.innerHTML = this.highscore;
-
-        // gameSeq and enterSeq are only used for testing purposes
-        // this.gameSeq = document.getElementById("game-seq");
-        // this.enterSeq = document.getElementById("enter-seq");
 
         // This is the display of the sequence
         this.drawSeq = document.getElementById("draw-seq");
@@ -69,56 +59,11 @@ class Game {
         return this.colors[randomIndex];
     }
 
-    draw(){
-        // // ctx.fillRect(x, y, width, height);
-        // this.ctx.clearRect(0, 0, this.DIM_X, this.DIM_Y);
-        // this.ctx.fillStyle = this.BG_COLOR;
-        // this.ctx.fillRect(0, 0, this.DIM_X, this.DIM_Y);
-
-        let drawSeq = document.getElementById("draw-seq");
-
-        // if(drawSeq.children){
-        //     Array.from(drawSeq.children).forEach((child) => drawSeq.removeChild(child));
-        // }
-
-        this.gameSequence.forEach(
-            (element) => {
-                let newEle = document.createElement("li");
-                
-                if (element === "w"){
-                    newEle.className = "triangle";
-                }
-                else if (element === "a"){
-                    newEle.className = "square";
-                }
-                else if (element === "d"){
-                    newEle.className = "circle";
-                }
-                else {
-                    newEle.className = "number";
-                }
-                
-                drawSeq.appendChild(newEle);
-            }
-        )
-        
-        // // arc(x, y, radius, startAngle, endAngle)
-        // this.ctx.beginPath();
-        // this.ctx.arc(95, 50, 40, 0, 2 * Math.PI);
-        // this.ctx.stroke();
-
-        // this.ctx.beginPath();
-        // this.ctx.arc(250, 50, 40, 0, 2 * Math.PI);
-        // this.ctx.stroke();
-
-    }
-
     playRound(){
 
         let randomItem = this.generateRandomItem();
         let randomColor = this.generateRandomColor();
 
-        // this.gameSeq.textContent += randomItem;
         this.gameSequence += randomItem;
         
         let newEle = document.createElement("div");
@@ -175,7 +120,6 @@ class Game {
         // NOTE: There should only be 1 keydown event listener!
         document.addEventListener('keydown', (e)=>{
             this.enteredSequence += e.key;
-            // this.enterSeq.textContent += `${e.key}`;
 
             //console.log("Entered key: " + e.key);
             //console.log("Check: " + this.gameSequence + " Index: " + this.checkIndex);
@@ -231,7 +175,6 @@ class Game {
 
     resetRound(){
         this.enteredSequence = "";
-        // this.enterSeq.textContent = "User entered: ";
         this.countdown = this.timeLimit;
         this.checkIndex = 0;
     }
