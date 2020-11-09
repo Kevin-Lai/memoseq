@@ -29,6 +29,15 @@
     border-radius: 10px;
 }
 
+@keyframes swayAnimation {
+    0%, 100%{ transform: rotate(-30deg);}
+    50%{ transform: rotate(30deg); }
+}
+
+.triangle, .circle, .square, .number{
+    animation: swayAnimation 1s infinite;
+}
+
 #draw-seq {
     display: flex;
     justify-content: space-evenly;
