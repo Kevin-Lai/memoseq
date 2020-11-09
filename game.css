@@ -61,14 +61,14 @@
         background-color: yellow;
     }
     25% {
-        background-color: rgb(255, 141, 113);
+        background-color: greenyellow;
     }
     50%  {
         transform: rotate(30deg);
         background-color: turquoise;
     }
     75% {
-        background-color: greenyellow;
+        background-color: rgb(255, 141, 113);
     }
 }
 
