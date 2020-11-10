@@ -1,4 +1,4 @@
-.triangle{
+.triangle, .triangle-no-move{
 	width: 0;
 	height: 0;
 	border-left: 25px solid transparent;
@@ -6,20 +6,20 @@
 	border-bottom: 50px solid black;
 }
 
-.circle {
+.circle, .circle-no-move {
     height: 50px;
     width: 50px;
     background-color: black;
     border-radius: 50%;
 }
 
-.square {
+.square, .square-no-move{
     height: 50px;
     width: 50px;
     background-color: black;
 }
 
-.number {
+.number, .number-no-move{
     height: 50px;
     width: 50px;
     font-size: 50px;
