@@ -79,21 +79,21 @@ class Game {
             this.newEle.className = "triangle";
             this.newEle.style.borderBottomColor = randomColor;
             this.newEle.style.backgroundColor = "";
-            this.newEle.style.textContent = "";
+            this.newEle.textContent = "";
             this.newEle.style.color = "";
         }
         else if (randomItem === "a"){
             this.newEle.className = "square";
             this.newEle.style.backgroundColor = randomColor;
             this.newEle.style.borderBottomColor = "";
-            this.newEle.style.textContent = "";
+            this.newEle.textContent = "";
             this.newEle.style.color = "";
         }
         else if (randomItem === "d"){
             this.newEle.className = "circle";
             this.newEle.style.backgroundColor = randomColor;
             this.newEle.style.borderBottomColor = "";
-            this.newEle.style.textContent = "";
+            this.newEle.textContent = "";
             this.newEle.style.color = "";
         }
         else {
