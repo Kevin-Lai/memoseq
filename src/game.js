@@ -30,8 +30,11 @@ class Game {
         this.level = document.getElementById("level");
         this.level.innerHTML = this.highscore;
 
+        // This is for matching sequence
         // This is the display of the sequence
-        this.drawSeq = document.getElementById("draw-seq");
+        //this.drawSeq = document.getElementById("draw-seq");
+
+        this.newEle = document.getElementById("ele-seq");
 
         this.playRound = this.playRound.bind(this);
 
@@ -69,27 +72,40 @@ class Game {
 
         this.gameSequence += randomItem;
         
-        let newEle = document.createElement("div");
+        // This is for matching sequence
+        //let newEle = document.createElement("div");
                 
         if (randomItem === "w"){
-            newEle.className = "triangle";
-            newEle.style.borderBottomColor = randomColor;
+            this.newEle.className = "triangle";
+            this.newEle.style.borderBottomColor = randomColor;
+            this.newEle.style.backgroundColor = "";
+            this.newEle.style.textContent = "";
+            this.newEle.style.color = "";
         }
         else if (randomItem === "a"){
-            newEle.className = "square";
-            newEle.style.backgroundColor = randomColor;
+            this.newEle.className = "square";
+            this.newEle.style.backgroundColor = randomColor;
+            this.newEle.style.borderBottomColor = "";
+            this.newEle.style.textContent = "";
+            this.newEle.style.color = "";
         }
         else if (randomItem === "d"){
-            newEle.className = "circle";
-            newEle.style.backgroundColor = randomColor;
+            this.newEle.className = "circle";
+            this.newEle.style.backgroundColor = randomColor;
+            this.newEle.style.borderBottomColor = "";
+            this.newEle.style.textContent = "";
+            this.newEle.style.color = "";
         }
         else {
-            newEle.className = "number";
-            newEle.innerHTML = randomItem;
-            newEle.style.color = randomColor;
+            this.newEle.className = "number";
+            this.newEle.textContent = randomItem;
+            this.newEle.style.color = randomColor;
+            this.newEle.style.borderBottomColor = "";
+            this.newEle.style.backgroundColor = "";
         }
         
-        this.drawSeq.appendChild(newEle);
+        // This is for matching sequence
+        //this.drawSeq.appendChild(newEle);
 
         //console.log(this.gameSequence);
     }
@@ -202,7 +218,8 @@ class Game {
         this.gameOverDisplay.innerHTML = "";
         this.finalScoreDisplay.innerHTML = "";
         this.bestScoreDisplay.innerHTML = "";
-        this.drawSeq.innerHTML = "";
+        this.newEle.innerHTML = "";
+        //this.drawSeq.innerHTML = "";
     }
 
     reapplyButtonStyling(){
