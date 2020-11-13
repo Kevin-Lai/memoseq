@@ -117,11 +117,8 @@ class Game {
 
         function decrementTimer(){
             that.countdown--;
-            // console.log(countdown);
             if(that.countdown < 0){
                 that.gameOver();
-                // console.log("Time Over!");
-                // console.log(that.highscore);
             }
             else{
                 that.timer.innerHTML = that.countdown;
