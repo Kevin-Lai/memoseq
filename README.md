@@ -2,6 +2,7 @@
 
 [MemoSeq Live](https://kevin-lai.github.io/memoseq/)
 
+## Background
 
 MemoSeq is a memory game that involves memorizing a sequence of shapes and numbers and entering the corresponding keys in the correct order.
 
