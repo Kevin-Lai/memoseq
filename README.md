@@ -21,7 +21,7 @@ MemoSeq is a memory game that involves memorizing a sequence of shapes and numbe
 1) Players must memorize the sequence item that appears on each level.
 2) Shapes are mapped to WAD keys, and numbers are mapped to number keys.
 3) Players must press the correct key on the keyboard that corresponds to that shape or number.
-4) For each level, the player must enter the entire sequence of keys that have appeared so far, starting from the item that appeared on level 1 all the way up to the items that have appeared on all levels up to the current level. 
+4) For each level, the player must enter the entire sequence of keys that have appeared so far in the order that they have appeared in, starting from the item that appeared on level 1 up to all of the items that have appeared on all levels up to the current level. 
 5) The number of items in the sequence increases with each level while the time limit for each level remains the same.
 6) Pressing an incorrect key or running out of time will result in a Game Over.
 7) High score is the level reached when getting a game over.
