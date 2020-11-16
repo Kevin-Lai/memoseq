@@ -17,7 +17,7 @@ MemoSeq is a memory game that involves memorizing a sequence of shapes and numbe
 * CSS
 * HTML
 
-## Overview:
+## Overview
 1) Players must memorize the sequence item that appears on each level.
 2) Shapes are mapped to WAD keys, and numbers are mapped to number keys.
 3) Players must press the correct key on the keyboard that corresponds to that shape or number.
@@ -27,6 +27,9 @@ MemoSeq is a memory game that involves memorizing a sequence of shapes and numbe
 7) High score is the level reached when getting a game over.
 8) Best score is the highest level the player has ever reached in the current game session.
 9) The colors of the numbers and the shapes are also randomized.
+
+## 
+![Title Screen]()
 
 ## Future Planned Features
 * Multiple game modes - 3 modes
