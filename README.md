@@ -6,6 +6,11 @@
 * [Background](#background)
 * [Technologies](#technologies)
 * [Overview](#overview)
+* [Game Features](#game-features)
+ * [Title Screen](#title-screen)
+ * [Controls Screen](#controls-screen)
+ * [Full Game Demo](#full-game-demo)
+ * [Restart Game](#restart-game)
 * [Future Planned Features](#future-planned-features)
 
 ## Background
@@ -28,16 +33,19 @@ MemoSeq is a memory game that involves memorizing a sequence of shapes and numbe
 8) Best score is the highest level the player has ever reached in the current game session.
 9) The colors of the numbers and the shapes are also randomized.
 
-## Title Screen
+## Game Features
+The following screenshots display the features of the game.
+
+### Title Screen
 ![Title Screen](https://github.com/Kevin-Lai/memoseq/blob/master/images/title_screen.gif)
 
-## Controls Screen
+### Controls Screen
 ![Controls Screen](https://github.com/Kevin-Lai/memoseq/blob/master/images/controls.gif)
 
-## Full Game Demo
+### Full Game Demo
 ![Game Demo](https://github.com/Kevin-Lai/memoseq/blob/master/images/game_demo.gif)
 
-## Restart Game
+### Restart Game
 ![Restart Game](https://github.com/Kevin-Lai/memoseq/blob/master/images/restart.gif)
 
 ## Future Planned Features
