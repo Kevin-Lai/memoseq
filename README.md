@@ -2,9 +2,21 @@
 
 [MemoSeq Live](https://kevin-lai.github.io/memoseq/)
 
+## Table of Contents
+* [Background](#background)
+* [Technologies](#technologies)
+* [Overview](#overview)
+* [Future Planned Features](#future-planned-features)
+
 ## Background
 
 MemoSeq is a memory game that involves memorizing a sequence of shapes and numbers and entering the corresponding keys in the correct order.
+
+## Technologies
+* Javascript - (Vanilla Javascript)
+* CSS
+* HTML
+
 
 ## Rules:
 1) Players must match the randomly-generated number+shape sequence in the correct order using assigned keys on the key board within the time limit for each level.
