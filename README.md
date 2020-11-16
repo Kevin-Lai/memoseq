@@ -53,3 +53,4 @@ The following screenshots display the features of the game.
   * normal mode - (10 secs)
   * easy mode - (15 secs)
   * hard mode - (5 secs)
+* Add sound or music
