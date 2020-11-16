@@ -7,10 +7,10 @@
 * [Technologies](#technologies)
 * [Overview](#overview)
 * [Game Features](#game-features)
- * [Title Screen](#title-screen)
- * [Controls Screen](#controls-screen)
- * [Full Game Demo](#full-game-demo)
- * [Restart Game](#restart-game)
+   * [Title Screen](#title-screen)
+   * [Controls Screen](#controls-screen)
+   * [Full Game Demo](#full-game-demo)
+   * [Restart Game](#restart-game)
 * [Future Planned Features](#future-planned-features)
 
 ## Background
