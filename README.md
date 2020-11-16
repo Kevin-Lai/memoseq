@@ -30,6 +30,6 @@ MemoSeq is a memory game that involves memorizing a sequence of shapes and numbe
 
 ## Future Planned Features
 * Multiple game modes - 3 modes
-  * normal mode (10 secs)
-  * easy mode (15 secs)
-  * hard mode (5 secs)
+  * normal mode - (10 secs)
+  * easy mode - (15 secs)
+  * hard mode - (5 secs)
