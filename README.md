@@ -60,21 +60,21 @@ The following screenshots display the features of the game.
 
 ### Countdown Timer
 ```js
-    countdownTimer(){
-        this.startInterval = setInterval(decrementTimer, 1000);
+countdownTimer(){
+	this.startInterval = setInterval(decrementTimer, 1000);
 
-        let that = this;
+	let that = this;
 
-        function decrementTimer(){
-            that.countdown--;
-            if(that.countdown < 0){
-                that.gameOver();
-            }
-            else{
-                that.timer.innerHTML = that.countdown;
-            }
-        }
-    }
+	function decrementTimer(){
+		that.countdown--;
+		if(that.countdown < 0){
+			that.gameOver();
+		}
+		else{
+			that.timer.innerHTML = that.countdown;
+		}
+	}
+}
 ```
 At the start of the game, the countdown interval starts and decrements the timer by 1 for every second that passes. If the countdown goes down to 0, then the game is over, and the gameOver function will be executed to display the player's score. Otherwise, while the countdown timer is continuing to decrement, the timer display will update every second with the new remaining time.
 
