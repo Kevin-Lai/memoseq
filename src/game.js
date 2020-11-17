@@ -53,6 +53,8 @@ class Game {
         this.ctrlsButton = document.getElementById("ctrls-button");
         this.ctrlsModal = document.getElementById("ctrls-modal");
         this.ctrlsClose = document.getElementById("ctrls-close");
+
+        this.instructionBlock = document.getElementById("instruction-block");
     }
     
     generateRandomItem(){
@@ -177,12 +179,14 @@ class Game {
             this.ctrlsBlock.style.display = "none";
             this.startBlock.style.display = "none";
             this.createdBy.style.display = "none";
+            this.instructionBlock.style.display = "flex";
             this.restartGame();
             this.run();
         });
     }
 
     gameOver(){
+        this.instructionBlock.style.display = "none";
         this.gameOverDisplay.innerHTML = "Game Over";
         this.finalScoreDisplay.innerHTML = "Highscore: " + this.highscore;
         clearInterval(this.startInterval);

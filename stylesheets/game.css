@@ -262,3 +262,17 @@
     font-weight: bold;
     color: red;
 }
+
+#instruction-block {
+    display: none;
+    justify-content: center;
+}
+
+#instruction-text {
+    white-space: pre-line;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    width: 700px;
+    color: rgb(27, 124, 103);
+}
