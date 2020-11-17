@@ -78,6 +78,27 @@ The following screenshots display the features of the game.
 ```
 At the start of the game, the countdown interval starts and decrements the timer by 1 for every second that passes. If the countdown goes down to 0, then the game is over, and the gameOver function will be executed to display the player's score. Otherwise, while the countdown timer is continuing to decrement, the timer display will update every second with the new remaining time.
 
+---
+### Keypress Checker
+```js
+	document.addEventListener('keydown', (e)=>{
+		this.enteredSequence += e.key;
+
+		if(e.key !== this.gameSequence[this.checkIndex]){
+			this.gameOver();
+		}
+
+		this.checkIndex++;
+
+		if(this.enteredSequence === this.gameSequence && this.enteredSequence){
+			this.resetRound();
+			this.highscore++;
+			this.level.innerHTML = this.highscore;
+			this.playRound();
+		}
+	});
+```
+The keypress checker is an event listener that is attached at the start of the game. On each level, it checks each key that the player presses. If the pressed key does not match the correct key in the sequence, then there will be a game over, and the gameOver function will be executed to display the player's score. If all of the keys that the player pressed on the current level matches all of items in the sequence, then the player will progress to the next level where the timer is reset, the level is increased, and an additional item is added to the sequence.
 
 ---
 
