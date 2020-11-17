@@ -161,6 +161,7 @@
 
 #start-button:hover, #ctrls-button:hover {
     background-color: rgb(255, 217, 0);
+    cursor: pointer;
 }
 
 #ctrls-button {
