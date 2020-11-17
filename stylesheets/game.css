@@ -276,3 +276,8 @@
     width: 700px;
     color: rgb(27, 124, 103);
 }
+
+#game-title {
+    font-size: 100px;
+    font-weight: bold;
+}
