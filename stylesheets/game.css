@@ -19,7 +19,7 @@
     background-color: black;
 }
 
-.number, .number-no-move{
+.number, .number-no-move, .name-letter{
     height: 50px;
     width: 50px;
     font-size: 50px;
@@ -73,9 +73,7 @@
     }
 }
 
-#created-k, #created-e, #created-v,
-#created-i, #created-n, #created-l,
-#created-a, #created-ii {
+.name-letter {
     margin-left: 10px;
     margin-right: 10px;
     animation: colorSway 2s infinite;
