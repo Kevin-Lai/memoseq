@@ -39,14 +39,22 @@ The following screenshots display the features of the game.
 ### Title Screen
 ![Title Screen](https://github.com/Kevin-Lai/memoseq/blob/master/images/title_screen.gif)
 
+---
+
 ### Controls Screen
 ![Controls Screen](https://github.com/Kevin-Lai/memoseq/blob/master/images/controls.gif)
+
+---
 
 ### Full Game Demo
 ![Game Demo](https://github.com/Kevin-Lai/memoseq/blob/master/images/game_demo.gif)
 
+---
+
 ### Restart Game
 ![Restart Game](https://github.com/Kevin-Lai/memoseq/blob/master/images/restart.gif)
+
+---
 
 ## Future Planned Features
 * Multiple game modes - 3 modes
