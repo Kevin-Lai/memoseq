@@ -281,3 +281,13 @@
     font-size: 100px;
     font-weight: bold;
 }
+
+.about-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.about-logo-left {
+    margin-right: 50px;
+}
