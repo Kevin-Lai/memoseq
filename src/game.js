@@ -53,6 +53,7 @@ class Game {
         this.ctrlsButton = document.getElementById("ctrls-button");
         this.ctrlsModal = document.getElementById("ctrls-modal");
         this.ctrlsClose = document.getElementById("ctrls-close");
+        this.ctrlsCloseButtonBlock = document.getElementById("ctrls-close-button-block");
 
         this.instructionBlock = document.getElementById("instruction-block");
     }
@@ -170,6 +171,9 @@ class Game {
             this.ctrlsModal.style.display = "block";
         });
         this.ctrlsClose.addEventListener("click", ()=>{
+            this.ctrlsModal.style.display = "none";
+        });
+        this.ctrlsCloseButtonBlock.addEventListener("click", ()=>{
             this.ctrlsModal.style.display = "none";
         });
     }

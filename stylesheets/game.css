@@ -213,6 +213,24 @@ body {
     cursor: pointer;
 }
 
+#ctrls-close-button {
+    font-size: 50px;
+    font-weight: bold;
+    background-color: yellow;
+    border-radius: 25px;
+    box-shadow: 4px 4px black;
+}
+
+#ctrls-close-button:hover {
+    color: red;
+    cursor: pointer;
+}
+
+#ctrls-close-button-block {
+    display: flex;
+    justify-content: center;
+}
+
 #close-block{
     display: flex;
     justify-content: space-between;
