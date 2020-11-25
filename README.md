@@ -11,6 +11,7 @@
    * [Controls Screen](#controls-screen)
    * [Full Game Demo](#full-game-demo)
    * [Restart Game](#restart-game)
+* [Code Snippets](#code-snippets)
 * [Future Planned Features](#future-planned-features)
 
 ## Background
