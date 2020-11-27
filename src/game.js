@@ -157,7 +157,6 @@ class Game {
                 // if the user entered the correct sequence, then the level increases
                 // and another item is added to the sequence
                 // and the countdown is reset.
-                // console.log("Matched");
                 this.resetRound();
                 this.highscore++;
                 this.level.innerHTML = this.highscore;
