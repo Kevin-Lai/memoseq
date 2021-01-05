@@ -2,7 +2,7 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
 
-.triangle, .triangle-no-move{
+.triangle, .triangle-no-move, .triangle-no-move-example{
 	width: 0;
 	height: 0;
 	border-left: 25px solid transparent;
@@ -14,20 +14,20 @@ body {
     margin-left: 15px;
 }
 
-.circle, .circle-no-move {
+.circle, .circle-no-move, .circle-no-move-example {
     height: 50px;
     width: 50px;
     background-color: black;
     border-radius: 50%;
 }
 
-.square, .square-no-move{
+.square, .square-no-move, .square-no-move-example{
     height: 50px;
     width: 50px;
     background-color: black;
 }
 
-.number, .number-no-move, .name-letter{
+.number, .number-no-move, .number-no-move-example, .name-letter{
     height: 50px;
     width: 50px;
     font-size: 50px;
@@ -236,7 +236,7 @@ body {
     justify-content: space-between;
 }
 
-#ctrls-title {
+.ctrls-title {
     display: flex;
     justify-content: center;
     font-size: 50px;
@@ -245,7 +245,7 @@ body {
     color: teal;
 }
 
-#ctrls-goal {
+.ctrls-goal {
     display: flex;
     justify-content: center;
     font-size: 20px;
@@ -316,4 +316,36 @@ body {
 
 .about-logo-left {
     margin-right: 50px;
+}
+
+.example-block {
+    display: flex;
+    justify-content: space-around;
+}
+
+.example-item{
+    display: flex;
+    flex-direction: column;
+}
+
+.example-level, .example-seq, .example-text {
+    margin-bottom: 30px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.example-level{
+    color: royalblue;
+}
+
+.example-seq {
+    color: green;
+}
+
+.example-text{
+    color: orangered;
+}
+
+.number-no-move-example, .triangle-no-move-example, .square-no-move-example, .circle-no-move-example {
+    margin-bottom: 30px;
 }

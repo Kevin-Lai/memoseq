@@ -74,11 +74,11 @@
                 <div></div>
                 <label id="ctrls-close">x</label>
             </div>
-            <h2 id="ctrls-title">Instructions</h2>
-            <h3 id="ctrls-goal">Memorize the shape or number shown in each level.</h3>
-            <h3 id="ctrls-goal">For each level, you must enter the entire sequence of keys that have appeared so far.</h3>
-            <h3 id="ctrls-goal">Press the correct corresponding keys on the keyboard in the order in which they have appeared.</h3>
-            <h3 id="ctrls-goal">Each subsequent level will add a new element to the sequence.</h3>
+            <h2 class="ctrls-title">Instructions</h2>
+            <h3 class="ctrls-goal">Memorize the shape or number shown in each level.</h3>
+            <h3 class="ctrls-goal">For each level, you must enter the entire sequence of keys that have appeared so far.</h3>
+            <h3 class="ctrls-goal">Press the correct corresponding keys on the keyboard in the order in which they have appeared.</h3>
+            <h3 class="ctrls-goal">Each subsequent level will add a new element to the sequence.</h3>
             <div id="ctrls-instructions">
                 <h4 class="ctrls-text">The following shapes and numbers correspond to the shown specified keys.</h4>
                 <div class="ctrls-sequence">
@@ -99,6 +99,32 @@
                         <label class="ctrl-key-label"> = Number Keys</label>
                     </div>
                 </div>
+                <hr>
+                <h2 class="ctrls-title">EXAMPLE</h2>
+                <div class="example-block">
+                    <div class="example-item">
+                        <h4 class="example-level">Level 1:</h4>
+                        <h4 class="example-level">Level 2:</h4>
+                        <h4 class="example-level">Level 3:</h4>
+                        <h4 class="example-level">Level 4:</h4>
+                        <h4 class="example-level">Level 5:</h4>
+                    </div>
+                    <div class="example-item">
+                        <div class="number-no-move-example">4</div>
+                        <div class="triangle-no-move-example"></div>
+                        <div class="square-no-move-example"></div>
+                        <div class="number-no-move-example">8</div>
+                        <div class="number-no-move-example">9</div>
+                    </div>
+                    <div class="example-item">
+                        <h4 class="example-text">Enter: <label class="example-seq">4</label></h4>
+                        <h4 class="example-text">Enter: <label class="example-seq">4w</label></h4>
+                        <h4 class="example-text">Enter: <label class="example-seq">4wa</label></h4>
+                        <h4 class="example-text">Enter: <label class="example-seq">4wa8</label></h4>
+                        <h4 class="example-text">Enter: <label class="example-seq">4wa89</label></h4>
+                    </div>
+                </div>
+                <hr>
                 <h4 class="ctrls-text">Entering an incorrect key in the sequence will result in a GAME OVER!</h4>
                 <h4 class="ctrls-game-over">GAME OVER</h4>
                 <div id="ctrls-close-button-block">
