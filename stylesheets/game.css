@@ -280,6 +280,12 @@ body {
     margin-bottom: 30px;
 }
 
+.ctrl-key-ingame {
+	display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
 .ctrls-game-over {
     display: flex;
     justify-content: center;
@@ -312,6 +318,7 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 .about-logo-left {
